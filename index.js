@@ -46,3 +46,9 @@ if (day === 1 || day === 3) {
 }
 
 module.exports = bot;
+
+/*
+git add .
+git commit -m 'commit message'
+git push heroku master
+*/
