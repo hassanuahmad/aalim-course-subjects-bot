@@ -19,7 +19,7 @@ allDayNames[6] = "Saturday";
 
 let dayName = allDayNames[date.getDay()];
 
-if (day === 1 || day === 3) {
+if (day === 1 || (day === 3 && time >= trigger)) {
     bot.telegram.sendMessage(
         process.env.CHAT_ID,
         `${dayName}'s Subject: \n\n7:10 : 8:10 : *Fiqh*`,
@@ -35,7 +35,7 @@ if (day === 1 || day === 3) {
             parse_mode: "MarkdownV2",
         }
     );
-} else if (day === 4) {
+} else if (day === 4 && time >= trigger) {
     bot.telegram.sendMessage(
         process.env.CHAT_ID,
         `${dayName}'s Subjects: \n\n6:00 : 7:00 : *An-Nahw*\n7:00 : 8:00 : *Qasas*\n8:00 : 8:30 : *Arabic Speaking*`,
