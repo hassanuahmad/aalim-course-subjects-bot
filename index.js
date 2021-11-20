@@ -1,21 +1,21 @@
 require("dotenv").config();
-const { Telegraf } = require("telegraf");
+const { Composer } = require("micro-bot");
 
-const bot = new Telegraf(process.env.TOKEN);
+const bot = new Composer();
 
 const date = new Date();
 const day = date.getDay();
 const time = date.getTime();
-const trigger = date.setHours(17, 0, 0);
+// const trigger = date.setHours(17, 10, 10);
 
 const allDayNames = new Array(7);
-weekday[0] = "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
+allDayNames[0] = "Sunday";
+allDayNames[1] = "Monday";
+allDayNames[2] = "Tuesday";
+allDayNames[3] = "Wednesday";
+allDayNames[4] = "Thursday";
+allDayNames[5] = "Friday";
+allDayNames[6] = "Saturday";
 
 let dayName = allDayNames[date.getDay()];
 
@@ -45,4 +45,4 @@ if (day === 1 || day === 3) {
     );
 }
 
-bot.launch();
+module.exports = bot;
