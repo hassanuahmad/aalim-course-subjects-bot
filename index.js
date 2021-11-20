@@ -6,9 +6,9 @@ const bot = new Telegraf(process.env.TOKEN);
 const date = new Date();
 const day = date.getDay();
 const time = date.getTime();
-const trigger = date.setHours(22, 6, 11);
+const trigger = date.setHours(17, 0, 0);
 
-const weekday = new Array(7);
+const allDayNames = new Array(7);
 weekday[0] = "Sunday";
 weekday[1] = "Monday";
 weekday[2] = "Tuesday";
@@ -17,7 +17,7 @@ weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
 
-let dayName = weekday[date.getDay()];
+let dayName = allDayNames[date.getDay()];
 
 if (day === 1 || day === 3) {
     bot.telegram.sendMessage(
