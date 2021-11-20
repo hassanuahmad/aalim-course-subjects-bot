@@ -6,5 +6,6 @@ This is a **Telegram** BOT that sends a message daily to our class group chat an
 ## Tech stack
 <ul>  
 <li>JavaScript</li>  
-<li>Telegraf Library</li>  
+<li>Telegraf Library</li>
+<li>Micro-Bot Library</li>
 </ul>
