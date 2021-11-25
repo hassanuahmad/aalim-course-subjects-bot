@@ -12,7 +12,7 @@ bot.startWebhook(`/bot${API_TOKEN}`, null, PORT);
 const date = new Date();
 const day = date.getDay();
 const time = date.getTime();
-const trigger = date.setHours(22, 45, 10);
+const trigger = date.setHours(22, 49, 10);
 
 const allDayNames = new Array(7);
 allDayNames[0] = "Sunday";
