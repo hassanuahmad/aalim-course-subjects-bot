@@ -6,7 +6,7 @@ const bot = new Composer();
 const date = new Date();
 const day = date.getDay();
 const time = date.getTime();
-const trigger = date.setHours(17, 10, 10);
+const trigger = date.setHours(21, 39, 10);
 
 const allDayNames = new Array(7);
 allDayNames[0] = "Sunday";
