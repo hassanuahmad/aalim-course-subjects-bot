@@ -25,7 +25,7 @@ allDayNames[6] = "Saturday";
 let dayName = allDayNames[date.getDay()];
 
 cron.schedule(
-    "23 23 * * *",
+    "49 23 * * *",
     () => {
         if (day === 1 || day === 3) {
             bot.telegram
