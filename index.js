@@ -1,14 +1,18 @@
 require("dotenv").config();
-const { Composer } = require("micro-bot");
+const { Telegraf } = require("telegraf");
 
-const bot = new Composer();
+const API_TOKEN = process.env.API_TOKEN || "";
+const PORT = process.env.PORT || 3000;
+const URL = process.env.URL;
 
-bot.start((ctx) => ctx.reply("Salam"));
+const bot = new Telegraf(API_TOKEN);
+bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
+bot.startWebhook(`/bot${API_TOKEN}`, null, PORT);
 
 const date = new Date();
 const day = date.getDay();
 const time = date.getTime();
-const trigger = date.setHours(21, 39, 10);
+const trigger = date.setHours(22, 45, 10);
 
 const allDayNames = new Array(7);
 allDayNames[0] = "Sunday";
@@ -47,7 +51,7 @@ if (day === 1 || (day === 3 && time >= trigger)) {
     );
 }
 
-module.exports = bot;
+bot.launch();
 
 /*
 git add .
