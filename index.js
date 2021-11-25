@@ -25,7 +25,7 @@ allDayNames[6] = "Saturday";
 let dayName = allDayNames[date.getDay()];
 
 cron.schedule(
-    "49 23 * * *",
+    "36 0 * * *",
     () => {
         if (day === 1 || day === 3) {
             bot.telegram
@@ -45,7 +45,7 @@ cron.schedule(
                     process.env.CHAT_ID,
                     `${dayName}'s Subjects: \n\n6:00 : 7:00 : *Hadith*\n7:00 : 8:00 : *Tafseer*\n8:00 : 8:30 : *TQ*`,
                     {
-                        parse_mode: "MarkdownV2",
+                        parse_mode: "ParseMode.HTML",
                     }
                 )
                 .catch(function (err) {
@@ -55,9 +55,9 @@ cron.schedule(
             bot.telegram
                 .sendMessage(
                     process.env.CHAT_ID,
-                    `${dayName}'s Subjects: \n\n6:00 : 7:00 : *An-Nahw*\n7:00 : 8:00 : *Qasas*\n8:00 : 8:30 : *Arabic Speaking*`,
+                    `${dayName}'s Subjects: \n\n6:00 : 7:00 : <b>An-Nahw</b>\n7:00 : 8:00 : Qasas\n8:00 : 8:30 : Arabic Speaking`,
                     {
-                        parse_mode: "MarkdownV2",
+                        parse_mode: "HTML",
                     }
                 )
                 .catch(function (err) {
