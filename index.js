@@ -3,6 +3,8 @@ const { Composer } = require("micro-bot");
 
 const bot = new Composer();
 
+bot.start((ctx) => ctx.reply("Salam"));
+
 const date = new Date();
 const day = date.getDay();
 const time = date.getTime();
